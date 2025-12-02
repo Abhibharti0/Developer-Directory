@@ -11,7 +11,7 @@ const DeveloperList = () => {
   const fetchDevelopers = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:3000/api/developer/getalldevelopers",
+        `${BackendURL}/api/developer/getalldevelopers`,
           { withCredentials: true }
       );
       console.log("Fetched developers:", res.data.developers);
