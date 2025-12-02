@@ -11,10 +11,22 @@ const developerSchema = new mongoose.Schema(
       type: String,
       required: true,
       enum: [
-        'Frontend',
-        'Backend',
-        'Full-Stack',
-      ],
+    "Frontend",
+    "Backend",
+    "Full-Stack",
+    "Mobile Developer",
+    "Data Scientist",
+    "Machine Learning Engineer",
+    "AI Engineer",
+    "Cloud Engineer",
+    "DevOps Engineer",
+    "Security Engineer",
+    "QA Engineer",
+    "Blockchain Developer",
+    "IoT Developer",
+    "Game Developer",
+  ]
+
     },
     techStack: {
       type: [String],

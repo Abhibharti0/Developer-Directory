@@ -23,8 +23,9 @@ const DeveloperForm = () => {
     if (!form.name.trim()) return "Name is required.";
     if (!form.role) return "Role is required.";
     if (!form.techStack.trim()) return "Tech Stack is required.";
-    if (!form.experience || form.experience <= 0)
-      return "Experience must be a positive number.";
+    if (form.experience == null || form.experience < 0)
+  return "Experience must be 0 or more.";
+
     return null;
   };
 
@@ -138,6 +139,17 @@ const DeveloperForm = () => {
             <option>Frontend</option>
             <option>Backend</option>
             <option>Full-Stack</option>
+            <option>Mobile Developer</option>
+            <option>Data Scientist</option>
+            <option>Machine Learning Engineer</option>
+            <option>AI Engineer</option>
+            <option>Cloud Engineer</option>
+            <option>DevOps Engineer</option>
+            <option>Security Engineer</option>
+            <option>QA Engineer</option>
+            <option>Blockchain Developer</option>
+            <option>IoT Developer</option>
+            <option>Game Developer</option>
           </select>
 
           <input

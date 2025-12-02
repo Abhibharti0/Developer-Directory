@@ -28,19 +28,17 @@ export const createDeveloper = async (req, res) => {
 };
 
 
+
+
 export const getDevelopers = async (req, res) => {
   try {
-    const { role, tech } = req.query;
+    // Agar query params nahi hain, sab developers fetch kar lo
+    const developers = await Developer.find().sort({ createdAt: -1 });
 
-    let filter = {};
-
-    if (role) filter.role = role;
-    if (tech) filter.techStack = { $regex: tech, $options: "i" }; // case-insensitive match
-
-    const developers = await Developer.find(filter).sort({ createdAt: -1 });
-
-    return res.status(200).json(developers);
+    // Frontend ke liye object me wrap karna best practice
+    return res.status(200).json({ developers });
   } catch (error) {
     return res.status(500).json({ message: "Server error", error: error.message });
   }
 };
+
