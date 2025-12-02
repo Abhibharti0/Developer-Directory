@@ -1,16 +1,17 @@
-import { useState } from 'react'
+import { Route, Routes } from 'react-router-dom'
+import { Toaster } from 'react-hot-toast'
+import DeveloperForm from './components/DeveloperForm'
 
-import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-    <div className="bg-black text-white p-4">
-  Developer Directory
-</div>
+      <Toaster />
 
+      <Routes>
+        <Route path='/' element={<DeveloperForm />} />
+        
+      </Routes>
     </>
   )
 }
